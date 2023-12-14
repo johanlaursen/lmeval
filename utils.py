@@ -69,4 +69,11 @@ def count_prompts_in_file(file_path):
 
     return total_count
 
-    return total_count
+
+def _handle_non_serializable(o):
+    if isinstance(o, np.int64) or isinstance(o, np.int32):
+        return int(o)
+    elif isinstance(o, set):
+        return list(o)
+    else:
+        return str(o)
