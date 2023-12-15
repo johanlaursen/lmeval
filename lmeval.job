@@ -9,7 +9,7 @@
 #SBATCH --mem=48G
 #SBATCH --constraint="gpu_rtx8000|gpu_a100_40gb|gpu_v100" # Use either a v100 or a100
 #SBATCH --gres=gpu:1      #v100:1 or a100_40gb:1 on brown
-#SBATCH --time=0-12:00:00          # Run time (hh:mm:ss) 
+#SBATCH --time=1-00:00:00          # Run time (hh:mm:ss) 
 #SBATCH --partition=red,brown    # Run on either the red or brown queue
 
 #srun hostname
@@ -28,8 +28,35 @@ nvidia-smi
 # model_name="llama_train_sft_7b"
 # model_path="/home/data_shares/mapillary/lmeval_models/sft/llama-7B"
 
-echo $model_name
 
+
+
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_both_500it"
+# model_name="bloom_3b_7b_both_500it" # DONE
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_both_1000it"
+# model_name="bloom_3b_7b_both_1000it" # DONE
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_english_500it"
+# model_name="bloom_3b_7b_english_500it" # DONE
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_english_1000it"
+# model_name="bloom_3b_7b_english_1000it" # DONE
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_spanish_500it"
+# model_name="bloom_3b_7b_spanish_500it" # DONE
+# model_path="/home/data_shares/mapillary/bloom_3b_7b_spanish_1000it"
+# model_name="bloom_3b_7b_spanish_1000it"
+# model_path="/home/data_shares/mapillary/llama_7b_13b_both_500it"
+# model_name="llama_7b_13b_both_500it"
+# model_path="/home/data_shares/mapillary/llama_7b_13b_both_1000it"
+# model_name="llama_7b_13b_both_1000it"
+# model_path="/home/data_shares/mapillary/llama_7b_13b_english_500it"
+# model_name="llama_7b_13b_english_500it" # running
+# model_path="/home/data_shares/mapillary/llama_7b_13b_english_1000it"
+# model_name="llama_7b_13b_english_1000it" # Malformed ???
+# model_path="/home/data_shares/mapillary/llama_7b_13b_spanish_500it"
+# model_name="llama_7b_13b_spanish_500it" # Malformed ???
+# model_path="/home/data_shares/mapillary/llama_7b_13b_spanish_1000it"
+# model_name="llama_7b_13b_spanish_1000it" # running
+
+echo $model_name
 
 lm_eval --model hf --model_args "pretrained=$model_path" --tasks "know_dist" --batch_size auto --max_batch_size 64 --use_cache="lm_cache/$model_name" --device cuda:0 --output_path "results/$model_name" --num_fewshot 0
 

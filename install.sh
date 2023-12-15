@@ -1,6 +1,6 @@
 export NCCL_DEBUG=""
 pip3 install transformers
-# pip3 install torch==2.0.1
+pip3 install torch==2.0.1
 # install torch with conda command for specific version? also install minillm requirements
 pip3 install deepspeed==0.10.0
 pip3 install torchvision==0.15.2
