@@ -1,0 +1,571 @@
+{
+  "results": {
+    "know_dist": {
+      "acc,none": 0.48776373805225937,
+      "acc_stderr,none": 0.1108160016123083,
+      "acc_norm,none": 0.3716265499635303,
+      "acc_norm_stderr,none": 0.00039123001035878035,
+      "perplexity,none": 17.124068388622685,
+      "perplexity_stderr,none": 184.6709410602578,
+      "alias": "know_dist"
+    },
+    "headqa_en": {
+      "acc,none": 0.3490153172866521,
+      "acc_stderr,none": 0.009104437331684917,
+      "acc_norm,none": 0.40663749088256745,
+      "acc_norm_stderr,none": 0.009382298412004424,
+      "alias": " - headqa_en"
+    },
+    "headqa_es": {
+      "acc,none": 0.29540481400437635,
+      "acc_stderr,none": 0.008714131357853835,
+      "acc_norm,none": 0.33661560904449306,
+      "acc_norm_stderr,none": 0.009025997976498995,
+      "alias": " - headqa_es"
+    },
+    "lambada_openai_mt_en": {
+      "perplexity,none": 3.167173005425923,
+      "perplexity_stderr,none": 0.06455396976736952,
+      "acc,none": 0.7372404424607025,
+      "acc_stderr,none": 0.006131911939484161,
+      "alias": " - lambada_openai_mt_en"
+    },
+    "lambada_openai_mt_es": {
+      "perplexity,none": 45.93437232634129,
+      "perplexity_stderr,none": 2.583848454333045,
+      "acc,none": 0.41024645837376283,
+      "acc_stderr,none": 0.006852827058720169,
+      "alias": " - lambada_openai_mt_es"
+    },
+    "paws_en": {
+      "acc,none": 0.3315,
+      "acc_stderr,none": 0.01052897452994942,
+      "alias": " - paws_en"
+    },
+    "paws_es": {
+      "acc,none": 0.3915,
+      "acc_stderr,none": 0.010916659824821182,
+      "alias": " - paws_es"
+    },
+    "paws_zh": {
+      "acc,none": 0.47,
+      "acc_stderr,none": 0.011162988226862477,
+      "alias": " - paws_zh"
+    },
+    "xnli_en": {
+      "acc,none": 0.5413654618473895,
+      "acc_stderr,none": 0.009987716412406587,
+      "alias": " - xnli_en"
+    },
+    "xnli_es": {
+      "acc,none": 0.4682730923694779,
+      "acc_stderr,none": 0.010001876146466708,
+      "alias": " - xnli_es"
+    },
+    "xnli_zh": {
+      "acc,none": 0.3506024096385542,
+      "acc_stderr,none": 0.009564237156206102,
+      "alias": " - xnli_zh"
+    },
+    "xstorycloze_en": {
+      "acc,none": 0.7789543348775645,
+      "acc_stderr,none": 0.010678457581809239,
+      "alias": " - xstorycloze_en"
+    },
+    "xstorycloze_es": {
+      "acc,none": 0.6690933156849769,
+      "acc_stderr,none": 0.012108982233131473,
+      "alias": " - xstorycloze_es"
+    },
+    "xstorycloze_zh": {
+      "acc,none": 0.557246856386499,
+      "acc_stderr,none": 0.012782510750319248,
+      "alias": " - xstorycloze_zh"
+    }
+  },
+  "groups": {
+    "know_dist": {
+      "acc,none": 0.48776373805225937,
+      "acc_stderr,none": 0.1108160016123083,
+      "acc_norm,none": 0.3716265499635303,
+      "acc_norm_stderr,none": 0.00039123001035878035,
+      "perplexity,none": 17.124068388622685,
+      "perplexity_stderr,none": 184.6709410602578,
+      "alias": "know_dist"
+    }
+  },
+  "configs": {
+    "headqa_en": {
+      "task": "headqa_en",
+      "group": [
+        "headqa"
+      ],
+      "dataset_path": "EleutherAI/headqa",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "Question: {{qtext}}\nAnswer:",
+      "doc_to_target": "{{ra - 1}}",
+      "doc_to_choice": "{{answers|map(attribute='atext')|list}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "query",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "headqa_es": {
+      "task": "headqa_es",
+      "group": [
+        "headqa"
+      ],
+      "dataset_path": "EleutherAI/headqa",
+      "dataset_name": "es",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "Question: {{qtext}}\nAnswer:",
+      "doc_to_target": "{{ra - 1}}",
+      "doc_to_choice": "{{answers|map(attribute='atext')|list}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "query",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "lambada_openai_mt_en": {
+      "task": "lambada_openai_mt_en",
+      "group": [
+        "lambada_multilingual"
+      ],
+      "dataset_path": "EleutherAI/lambada_openai",
+      "dataset_name": "en",
+      "test_split": "test",
+      "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+      "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "perplexity",
+          "aggregation": "perplexity",
+          "higher_is_better": false
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "loglikelihood",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{text}}",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "lambada_openai_mt_es": {
+      "task": "lambada_openai_mt_es",
+      "group": [
+        "lambada_multilingual"
+      ],
+      "dataset_path": "EleutherAI/lambada_openai",
+      "dataset_name": "es",
+      "test_split": "test",
+      "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+      "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "perplexity",
+          "aggregation": "perplexity",
+          "higher_is_better": false
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "loglikelihood",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{text}}",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "paws_en": {
+      "task": "paws_en",
+      "group": "pawsx",
+      "dataset_path": "paws-x",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[sentence1+\", right? Yes, \"+sentence2, sentence1+\", right? No, \"+sentence2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 0.0
+        }
+      ]
+    },
+    "paws_es": {
+      "task": "paws_es",
+      "group": "pawsx",
+      "dataset_path": "paws-x",
+      "dataset_name": "es",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[sentence1+\", verdad? S\u00ed, \"+sentence2, sentence1+\", verdad? No, \"+sentence2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 0.0
+        }
+      ]
+    },
+    "paws_zh": {
+      "task": "paws_zh",
+      "group": "pawsx",
+      "dataset_path": "paws-x",
+      "dataset_name": "zh",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[sentence1+\", \u5bf9\u5427? \u662f, \"+sentence2, sentence1+\", \u5bf9\u5427? \u4e0d\u662f, \"+sentence2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 0.0
+        }
+      ]
+    },
+    "xnli_en": {
+      "task": "xnli_en",
+      "group": "xnli",
+      "dataset_path": "xnli",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "validation",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[premise+\", right? Yes, \"+hypothesis,premise+\", right? Also, \"+hypothesis,premise+\", right? No, \"+hypothesis]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "xnli_es": {
+      "task": "xnli_es",
+      "group": "xnli",
+      "dataset_path": "xnli",
+      "dataset_name": "es",
+      "training_split": "train",
+      "validation_split": "validation",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[premise+\", correcto? S\u00ed, \"+hypothesis,premise+\", correcto? Asi que, \"+hypothesis,premise+\", correcto? No, \"+hypothesis]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "xnli_zh": {
+      "task": "xnli_zh",
+      "group": "xnli",
+      "dataset_path": "xnli",
+      "dataset_name": "zh",
+      "training_split": "train",
+      "validation_split": "validation",
+      "doc_to_text": "",
+      "doc_to_target": "label",
+      "doc_to_choice": "{{[premise+\", \u6b63\u786e? \u662f\u7684, \"+hypothesis,premise+\", \u6b63\u786e? \u6240\u4ee5, \"+hypothesis,premise+\", \u6b63\u786e? \u4e0d\u662f\u7684, \"+hypothesis]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "xstorycloze_en": {
+      "task": "xstorycloze_en",
+      "group": "xstorycloze",
+      "dataset_path": "juletxara/xstory_cloze",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "eval",
+      "doc_to_text": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "doc_to_target": "{{answer_right_ending-1}}",
+      "doc_to_choice": "{{[sentence_quiz1, sentence_quiz2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "xstorycloze_es": {
+      "task": "xstorycloze_es",
+      "group": "xstorycloze",
+      "dataset_path": "juletxara/xstory_cloze",
+      "dataset_name": "es",
+      "training_split": "train",
+      "validation_split": "eval",
+      "doc_to_text": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "doc_to_target": "{{answer_right_ending-1}}",
+      "doc_to_choice": "{{[sentence_quiz1, sentence_quiz2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    },
+    "xstorycloze_zh": {
+      "task": "xstorycloze_zh",
+      "group": "xstorycloze",
+      "dataset_path": "juletxara/xstory_cloze",
+      "dataset_name": "zh",
+      "training_split": "train",
+      "validation_split": "eval",
+      "doc_to_text": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "doc_to_target": "{{answer_right_ending-1}}",
+      "doc_to_choice": "{{[sentence_quiz1, sentence_quiz2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "metadata": [
+        {
+          "version": 1.0
+        }
+      ]
+    }
+  },
+  "versions": {
+    "headqa_en": "Yaml",
+    "headqa_es": "Yaml",
+    "know_dist": "N/A",
+    "lambada_openai_mt_en": "Yaml",
+    "lambada_openai_mt_es": "Yaml",
+    "paws_en": "Yaml",
+    "paws_es": "Yaml",
+    "paws_zh": "Yaml",
+    "xnli_en": "Yaml",
+    "xnli_es": "Yaml",
+    "xnli_zh": "Yaml",
+    "xstorycloze_en": "Yaml",
+    "xstorycloze_es": "Yaml",
+    "xstorycloze_zh": "Yaml"
+  },
+  "n-shot": {
+    "headqa_en": 0,
+    "headqa_es": 0,
+    "know_dist": 0,
+    "lambada_openai_mt_en": 0,
+    "lambada_openai_mt_es": 0,
+    "paws_en": 0,
+    "paws_es": 0,
+    "paws_zh": 0,
+    "xnli_en": 0,
+    "xnli_es": 0,
+    "xnli_zh": 0,
+    "xstorycloze_en": 0,
+    "xstorycloze_es": 0,
+    "xstorycloze_zh": 0
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=/home/data_shares/mapillary/llama_7b_13b_spanish_500it",
+    "batch_size": "auto",
+    "batch_sizes": [
+      32
+    ],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": {}
+  },
+  "git_hash": "b5ade5d"
+}
