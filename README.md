@@ -32,5 +32,4 @@ Note: if you need to change the job script or create a new one then there are th
 2. model_path: where the model is located. This is the huggingface `pretrained_model_name_or_path` so you can also provide it with for example `bigscience/bloom-3B` to load a model from huggingface.   
 3. output_path: location where the results will be saved. 
 
-
-Most other things should not be touched except for SBATCH settings in case you don't have red queue access or something similar. Each evaluation job script should run for roughly 30 min.
+You might also want to change the SBATCH job-name as it makes it much easier to find the right error and output log file if you name it after the model. Most other things should not be touched except for other SBATCH settings in case you don't have red queue access or something similar. Each evaluation job script should run for roughly 30 min.
